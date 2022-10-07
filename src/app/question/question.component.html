@@ -1,0 +1,81 @@
+<body>
+    <div class="container mt-2">
+        <div class="card">
+            <div class="d-flex justify-conatiner-between p-3">
+                <div class="image">
+                    <img class="bl" src="https://www.megaleechers.com/storage/AngularJS-Icon.png" alt="Angular Icon" width="70" height="70">
+                </div>
+                <div class="quiz-header">
+                    <h4 style="font-family: cursive;">Angular & TypeScript Quiz</h4>
+                    <span class="cl" style="font-style: italic;">Welcome {{name}}</span>
+                </div>
+            </div>
+    
+            <ng-container *ngIf="!QuizComplete">
+                <div class="d-flex justify-container-around py-3">
+                    <div class="score">
+                        <h5>
+                            {{points}} Points
+                        </h5>
+                    </div>
+                    <div class="questions-Remaining">
+                        <span style="font-style: italic;">Question {{currentQuestion+1}} of {{questionList.length}}</span>
+                    </div>
+                    <div class="timer">
+                        {{counter}} Sec ⌛
+                    </div>
+                </div>
+                <div class="progress mb-3" style="height: 20px;">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'width':progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="question">
+                    <div class="card">
+                        <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                    </div>
+                  </div>
+                  <div class="options">
+                        <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                            <li (click)="answer(currentQuestion+1,option)">
+                                <div  appChangeBg [isCorrect]="option.correct" class="card">
+                                    {{option.text}}
+                                </div>
+                            </li>
+                        </ol>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <button [disabled]="currentQuestion==0" class="btn" (click)="previousQuestion()">
+                        <i class="fa-solid fa-circle-chevron-left fa-3x"></i>
+                    </button>
+                    <button class="btn" (click)="restquiz()">
+                        <i class="fa-solid fa-arrows-rotate fa-3x"></i>
+                    </button>
+                    <button [disabled]="currentQuestion==8" class="btn" (click)="nextQuestion()">
+                        <i class="fa-solid fa-circle-chevron-right fa-3x"></i>
+                    </button>
+                  </div>
+            </ng-container>
+    
+            <ng-container *ngIf="QuizComplete">
+                <div class="row d-flex justify-conatiner-between">
+                    <div class="result text-center col-md-6 col-sm-12" >
+                        <h3 style="color: green;">Congratulations ! <br></h3> <h4>You Completed The Quiz <br> Check Your Results Below</h4>
+                        <p>Total Questions Attempt : {{questionList.length}}</p>
+                        <p>Total Questions Correct : {{correctAnswer}}</p>
+                        <p>Wrong Answers : {{incorrectAnswer}}</p>
+                        <img src="assets/image/party.gif" alt="Thank You" class="thanks"><br>
+                        <h1 style="font-family: cursive; font-size:x-large;">Your Score : {{points}} Points</h1>
+                    </div>
+                </div>
+                <span class="confetti-falling">&#9664;</span>
+                <span class="confetti-falling">&#9664;</span>
+                <span class="confetti-falling">&#9664;</span>
+                <span class="confetti-falling">&#9664;</span>
+                <span class="confetti-falling">&#9664;</span>
+                <span class="confetti-falling">&#9664;</span>
+                <!-- Back To HomeButton -->
+                <button class="btn btn-primary" routerLink="/welcome" style="font-family: cursive;" >Click To Home</button>
+            </ng-container>
+
+        </div>
+    </div>
+</body>

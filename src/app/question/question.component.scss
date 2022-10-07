@@ -1,0 +1,181 @@
+.quiz-header{
+    margin-left: 45%;
+}
+.cl{
+    margin-left: 30%;
+}
+.score{
+    padding-left: 15%;
+}
+.questions-Remaining{
+    padding-left: 20%;
+}
+.timer{
+    padding-left: 20%;
+}
+.card{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+li{
+    list-style-type: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+li .card:hover{
+    border: 3px solid blueviolet;
+}
+ol{
+    padding: 0%;
+}
+.col-sm-12{
+    margin-left: 50%;
+}
+.thanks{
+    width: 80%;
+}
+.btn-primary{
+    width: 30%;
+    margin-left: 10%;
+}
+
+/* Confetti Effect */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  
+  main {
+    max-width: 655px;
+    margin: 0 auto;
+    position: relative;
+    background: #f1f1f1;
+    padding: 50px 40px 60px 40px;
+    margin-top: 90px;
+  }
+  
+  /* Targets only firefox */
+  @-moz-document url-prefix() {
+    main {
+      max-width: 700px;
+    }
+  }
+  h1 {
+    font-size: 50px;
+    margin: 0;
+    color: #B109AA;
+    font-family: 'Sacramento', cursive;
+    line-height: 1;
+  }
+  h2 {
+    margin-bottom: 12px;
+  }
+  
+  .fa-laptop {
+    font-size: 190px;
+    float: left;
+    margin-right: 20px;
+  }
+  
+  blockquote {
+    clear: both;
+    margin-top: 75px;
+  }
+  blockquote p {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: 'Sacramento', cursive;
+    line-height: 1;
+  }
+  cite {
+    float: right;
+  }
+  
+  .fa-code {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    font-size: 200px;
+    opacity: .1;
+    color: #B109AA;
+  }
+  
+  .heart-pulse {
+    color: #B109AA;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  
+  .confetti-falling {
+    position: absolute;
+    color: red;
+    opacity: .5;
+    font-size: 22px;
+    animation: falling 6s infinite linear;
+  }
+  .confetti-falling:nth-of-type(1) {
+    bottom: 1200px;
+    left: 2%;
+    color: green;
+  }
+  .confetti-falling:nth-of-type(2) {
+    bottom: 500px;
+    left: 15%;
+    color: yellow;
+  }
+  .confetti-falling:nth-of-type(3) {
+    bottom: 1000px;
+    left: 50%;
+    color: blue;
+  }
+  .confetti-falling:nth-of-type(4) {
+    bottom: 475px;
+    left: 80%;
+    color: pink;
+  }
+  .confetti-falling:nth-of-type(5) {
+    bottom: 600px;
+    left: 40%;
+    color: purple;
+  }
+  .confetti-falling:nth-of-type(6) {
+    bottom: 1200px;
+    left: 60%;
+    color: orange;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.5);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.5);
+    }
+  }
+  
+  @keyframes falling {
+    0% {
+      transform: rotate(360deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      bottom: -25px;
+      transform: rotate(-360deg);
+    }
+  }
+  
+  
